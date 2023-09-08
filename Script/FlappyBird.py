@@ -108,9 +108,10 @@ class Cano:
         self.definir_altura()
 
     def definir_altura(self):
+        # Calculate a random position for the gap between the pipes
         self.altura = random.randrange(50, 450)
-        self.pos_topo = self.altura - self.CANO_TOPO.get_height()
-        self.pos_base = self.altura + self.DISTANCIA
+        self.pos_topo = self.altura - self.DISTANCIA // 2  # Adjust for the gap
+        self.pos_base = self.altura + self.DISTANCIA // 2  # Adjust for the gap
 
     def mover(self):
         self.x -= self.VELOCIDADE
